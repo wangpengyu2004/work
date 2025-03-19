@@ -1,0 +1,46 @@
+# config.yaml
+experiment:
+  model_save_path: "/home/wpy/wpy_workspace/work/clip4emo/model_save/sfew/sfew_new.pth"
+  log_path: "/home/wpy/wpy_workspace/work/clip4emo/log/sfew/log1.txt"
+  details_path: "/home/wpy/wpy_workspace/work/clip4emo/log/sfew/detail.txt"
+  tensorboard_path: "tensorboard/sfew_new"
+  sentimentlabels: 
+    - angry 
+    - disgust
+    - fear 
+    - happy 
+    - neutral
+    - sad 
+    - surprise
+  sentimentlabels_index:
+    0: 'angry'
+    1: 'disgust'
+    2: 'fear'
+    3: 'happy'
+    4: 'neutral'
+    5: 'sad' 
+    6: 'surprise'
+
+training:
+  epoch: 5 
+  batch_size: 12
+  lr: 0.00001
+  seed1: 1
+  seed2: 2
+  seed3: 3
+  seed4: 4
+  seed5: 5
+  scheduler_s: "cos"
+
+model:
+  text_inputsize: 512
+  text_outputsize: 512
+  image_inputsize: 512
+  image_outputsize: 512
+  step_size: 0.2
+  temperature: 0.08
+  hidesize: 4
+  alpha: 0.75
+  gamma: 2
+  batch_size: 12
+  num_heads: 8

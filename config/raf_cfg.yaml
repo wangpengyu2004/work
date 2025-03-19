@@ -1,0 +1,68 @@
+# config.yaml
+experiment:
+  model_save_path: "./model_save/raf/raf_save2.pth"
+  log_path: "./log/raf/log1.txt"
+  details_path: "./log/raf/detail.txt"
+  tensorboard_path: "tensorboard/raf_new"
+  sentimentlabels: 
+    - surprise 
+    - fearful
+    - disgusted 
+    - happy 
+    - sad
+    - angry 
+    - neutral
+  sentimentlabels_index:
+    0: 'surprise'
+    1: 'fearful'
+    2: 'disgusted'
+    3: 'happy'
+    4: 'sad'
+    5: 'angry' 
+    6: 'neutral'
+  descriptions :
+    0: "this photo that evokes surprise. An expression of shock and astonishment, with wide-open eyes and raised eyebrows, sometimes accompanied by a gasp or an open mouth"
+    1: "this photo that evokes fearful. An expression of tension and withdrawal, with wide-open eyes, raised eyebrows, and a slightly open mouth. The face may appear physically tense or frozen in fear"
+    2: "this photo that evokes disgusted. An expression of repulsion and displeasure, with a raised upper lip, a scrunched nose, and a downturned mouth"
+    3: "this photo that evokes happy. An expression of contentment and pleasure, with a smile and the corners of the mouth turned up,often accompanied by crinkling around the eyes.The face may appear relaxed and at ease"  
+    4: "this photo that evokes sad. An expression of sadness and sorrow, with a downturned mouth or frown, and sometimes tears or a tightness around the eyes. The face may appear physically withdrawn or resigned"
+    5: "this photo that evokes angry. A facial expression showing irritation and unrest, with a wrinkled forehead, narrowed eyes,and tight lips or a frown"
+    6: "this photo that evokes neutral. An expression of calm and neutrality, with a neutral mouth and no particular indication of emotion.The eyebrows are usually not raised or furrowed"
+
+training:
+  epoch: 10
+  batch_size: 6
+  lr: 0.001
+  seed1: 1
+  seed2: 2
+  seed3: 3
+  seed4: 4
+  seed5: 2024
+  scheduler_s: "cos"
+
+model:
+  text_inputsize: 512
+  text_outputsize: 512
+  image_inputsize: 512
+  image_outputsize: 512
+  num_class: 7
+  step_size: 0
+  temperature: 0.08
+  hard_negative_weight: 1
+  hidesize: 2
+  alpha: 0.5
+  gamma: 2
+  margin: [3,3]
+  lambda_spread : [0.7,0.7]
+  batch_size: 6
+  num_heads: 8
+  a: 0.6
+
+Prompt:
+  COOP:
+    N_CTX: 70
+    CTX_INIT: ""
+    CSC : True
+    CLASS_TOKEN_POSITION : "end"
+  INPUT:
+    SIZE: [224,224]

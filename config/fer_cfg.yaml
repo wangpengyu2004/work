@@ -1,0 +1,65 @@
+# config.yaml
+experiment:
+  model_save_path: "./model_save/fer/fer_save4.pth"
+  log_path: "./log/fer/log1.txt"
+  details_path: "./log/fer/detail.txt"
+  tensorboard_path: "tensorboard/fer_new"
+  sentimentlabels: 
+    - angry 
+    - disgust
+    - fear 
+    - happy 
+    - sad
+    - surprise 
+    - neutral
+  sentimentlabels_index:
+    0: 'angry'
+    1: 'disgust'
+    2: 'fear'
+    3: 'happy'
+    4: 'sad'
+    5: 'surprise' 
+    6: 'neutral'
+  descriptions :
+    0: "this photo that evokes surprise. An expression of shock and astonishment, with wide-open eyes and raised eyebrows, sometimes accompanied by a gasp or an open mouth"
+    1: "this photo that evokes fearful. An expression of tension and withdrawal, with wide-open eyes, raised eyebrows, and a slightly open mouth. The face may appear physically tense or frozen in fear"
+    2: "this photo that evokes disgusted. An expression of repulsion and displeasure, with a raised upper lip, a scrunched nose, and a downturned mouth"
+    3: "this photo that evokes happy. An expression of contentment and pleasure, with a smile and the corners of the mouth turned up,often accompanied by crinkling around the eyes.The face may appear relaxed and at ease"  
+    4: "this photo that evokes sad. An expression of sadness and sorrow, with a downturned mouth or frown, and sometimes tears or a tightness around the eyes. The face may appear physically withdrawn or resigned"
+    5: "this photo that evokes angry. A facial expression showing irritation and unrest, with a wrinkled forehead, narrowed eyes,and tight lips or a frown"
+    6: "this photo that evokes neutral. An expression of calm and neutrality, with a neutral mouth and no particular indication of emotion.The eyebrows are usually not raised or furrowed"
+
+training:
+  epoch: 15
+  batch_size: 12
+  lr: 0.001
+  seed1: 1
+  scheduler_s: "cos"
+
+model:
+  text_inputsize: 512
+  text_outputsize: 512
+  image_inputsize: 512
+  image_outputsize: 512
+  num_class: 7
+  step_size: 0
+  temperature: 0.08
+  hard_negative_weight: 3
+  hidesize: 10
+  weight: [[0.6] ,[1],  [0.6] ,[0.5] , [0.6] ,[0.6], [0.5]] #[[0.06882691] ,[0.6426896],  [0.06579126] ,[0.0349308] , [0.05652662] ,[0.08071185], [0.05052295]][[1],[1],[1],[1],[1],[1],[1]] 
+  alpha: 0.25
+  gamma: 2
+  margin: [2.5,2.5]
+  lambda_spread : [0.7,0.7]
+  batch_size: 12
+  num_heads: 8
+  a: 0.6
+
+Prompt:
+  COOP:
+    N_CTX: 70
+    CTX_INIT: ""
+    CSC : True
+    CLASS_TOKEN_POSITION : "end"
+  INPUT:
+    SIZE: [224,224]

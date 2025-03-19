@@ -1,0 +1,45 @@
+# config.yaml
+experiment:
+  model_save_path: "/home/wpy/wpy_workspace/work/clip4emo/model_save/ferplus/ferplus_new.pth"
+  log_path: "/home/wpy/wpy_workspace/work/clip4emo/log/ferplus/log1.txt"
+  details_path: "/home/wpy/wpy_workspace/work/clip4emo/log/ferplus/detail,txt"
+  tensorboard_path: "tensorboard/ferplus_new"
+  sentimentlabels: 
+    - anger 
+    - contempt
+    - disgusted
+    - fear 
+    - happiness 
+    - neutral
+    - sadness 
+    - surprise
+  sentimentlabels_index:
+    0: 'anger'
+    1: 'contempt'
+    2: 'disgusted'
+    3: 'fear'
+    4: 'happiness'
+    5: 'neutral' 
+    6: 'sadness'
+    7: 'surprise'
+
+training:
+  epoch: 5 
+  batch_size: 6
+  lr: 0.00002
+  seed1: 1
+  scheduler_s: "cos"
+
+model:
+  text_inputsize: 512
+  text_outputsize: 512
+  image_inputsize: 512
+  image_outputsize: 512
+  step_size: 0.1
+  temperature: 0.08
+  hidesize: 10
+  alpha: 0.9
+  gamma: 2
+  batch_size: 6
+  num_heads: 8
+  a: 0.2
